@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-family: sans-serif;
+
+}    
+body {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+
+}
+nav {
+    position: fixed;
+     width: 250px;
+    background: #ccc;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: ease-in-out 0.5s;
+}
+nav.hide{
+    width: 0;
+}
+.menu li a{
+    width: 100%;
+    color: #1e90ff;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 15px;
+    transition: linear 0.5s;
+}
+
+.menu{
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+}
+
+.icon{
+    margin: 0 12px;
+    color: #1e90ff;
+    font-size: 16px;
+
+}
+.menu li a:hover {
+    background: #1e90ff;
+    color: #ccc;
+    font-size: 18px;
+}
+a:hover .icon {
+    color: #ccc;
+    font-size: 18px;
+}
+/* Css content */
+
+.content{
+    position: absolute;left: 350px;
+    width: calc(100%-350px);
+    min-height: 30vh;
+    top:100px;
+    padding: 20px;
+    transition: ease-in-out 0.7s;
+
+}
+.content h1{
+    font-size: 60px;
+    color: #1e90ff;
+
+}
+.content.expand{
+    left: 0;
+}
+.toggle_menu{
+    position: absolute;
+    top: 10px;
+    right:  -49px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ccc;
+    border-radius:0 5px 5px 0 ;
+    transition: linear 0.3s;
+    color: #1e90ff;
+
+}
+.toggle_menu:hover{
+    color: antiquewhite;
+    background-color: #1e90ff;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="toggle_menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu">
+            <li></i><a href="#"><i class="fas fa-home icon"></i>Home</a></li>
+
+            <li></i><a href="#"><i class="fas fa-user icon""></i>About</a></li>
+
+            <li><a href="#"><i class="fas fa-phone icon"></i>Contact</a></li>
+
+            <li><a href="#"><i class="fas fa-envelope icon"></i>Message</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        <h1>My Menu</h1>
+    </section>
+<script>
+    const nav = document.querySelector('nav');
+    const toggle_menu = document.querySelector('.toggle_menu');
+    const content = document.querySelector('.content');
+
+    toggle_menu.onclick = function(){
+        nav.classList.toggle('hide')
+        content.classList.toggle('expand')
+    }
+</script>
+</body>
+</html>
